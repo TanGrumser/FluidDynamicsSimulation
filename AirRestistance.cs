@@ -41,7 +41,7 @@ public class AirRestistance : MonoBehaviour {
                 float projectedArea = area * Vector3.Dot(-normal, realtiveVelocity);
 
                 Vector3 dragForce =  0.5f * DRAG_COEFFICIENT * Mathf.Pow(realtiveVelocity.magnitude, 2f) * projectedArea * realtiveVelocity.normalized;
-                Vector3 effectiveForce = Vector3.Project(dragForce, -normal) * arbitraryMulitplier;
+                Vector3 effectiveForce = Vector3.Project(dragForce, -normal);
                 
                 _rigidBody.AddForceAtPosition(effectiveForce, center);
             }
